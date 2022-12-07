@@ -1,0 +1,66 @@
+.hero-container {
+  width: 100%;
+  min-height: 269px;
+  background: url("../../../../images/mobile-main-photo.png") no-repeat center
+    center;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (min-width: 600px) {
+    width: 100%;
+    height: 696px;
+    background-size: cover;
+  }
+
+  .search-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 335px;
+    height: 144px;
+    background-color: rgba(255, 255, 255, 0.88);
+
+    p {
+      font-family: "Helvetica Neue";
+      font-weight: 200;
+      font-size: 20px;
+      line-height: 32px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      border: 1px solid black;
+      border-radius: 5px;
+      width: 300px;
+      height: 32px;
+
+      input {
+        border: none;
+        background-color: transparent;
+        width: 253px;
+        height: 100%;
+        margin: auto;
+        &:focus {
+          outline: none;
+        }
+      }
+      img {
+        margin: 15px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @media only screen and (min-width: 600px) {
+      width: 650px;
+
+      p {
+        width: 30ch;
+      }
+    }
+  }
+}
