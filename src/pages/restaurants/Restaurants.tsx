@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootStore } from "../../store/store";
+import { AppDispatch, RootStore } from "../../store/store";
 import { getRestaurantsAndDishes } from "../../store/restaurant/restaurant.action";
 import { RestaurantCard } from "../../components/restaurants/RestaurantCard";
 import RestaurantNavbar from "../../components/restaurants/RestaurantNavbar";
@@ -11,12 +11,18 @@ const Restaurants = () => {
   const restaurants = useSelector(
     (state: RootStore) => state.restaurants.restaurants
   );
-  const dispatch = useDispatch();
+  console.log(restaurants);
+
+  const dispatch = useDispatch<AppDispatch>();
   const [filteredRestaurants, setFilteredRestaurants] = useState<
     Restaurant[] | null | undefined
   >([]);
   useEffect(() => {
-    dispatch(getRestaurantsAndDishes());
+    if (!restaurants) {
+      dispatch(getRestaurantsAndDishes());
+      console.log(restaurants);
+    }
+    // dispatch(getRestaurantsAndDishes());
     setFilteredRestaurants(restaurants);
   }, []);
 

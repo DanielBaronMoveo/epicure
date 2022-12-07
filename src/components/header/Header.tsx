@@ -18,7 +18,6 @@ const Header = () => {
 
   const toggleMenu = () => {
     setShowMenu((prevMenu) => !prevMenu);
-    console.log(showMenu);
   };
   const toggleSearch = () => {
     setIsSearch((prevSearch) => !prevSearch);

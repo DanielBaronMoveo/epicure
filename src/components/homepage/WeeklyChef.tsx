@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import ChefRestaurantCarousel from "./ChefRestaurantCarousel";
 import { Dish } from "../../interfaces/dish";
 import { useDispatch, useSelector } from "react-redux";
-import { RootStore } from "../../store/store";
+import { AppDispatch, RootStore } from "../../store/store";
 import { getChef } from "../../store/chef/chef.action";
 import ChefRestaurantTable from "./ChefRestaurantTable";
 
@@ -11,10 +11,12 @@ interface WeeklyChefProps {
 }
 
 export const WeeklyChef: React.FC<WeeklyChefProps> = ({ dishes }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const chef = useSelector((state: RootStore) => state.chef.chef);
   useEffect(() => {
-    dispatch(getChef());
+    if (!chef) {
+      dispatch(getChef());
+    }
   }, []);
 
   if (!chef) return <div>Loading...</div>;

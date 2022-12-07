@@ -1,26 +1,13 @@
 import RestaurantService from "../../services/restaurant.service";
-import { Dispatch } from "redux";
-import {
-  RestaurantDispatchTypes,
-  RESTAURANTS_FAIL,
-  RESTAURANTS_LOADING,
-  RESTAURANTS_SUCCESS,
-} from "./restaurant.action.types";
-import { DishesDispatchTypes, DISHES_SUCCESS } from "../dish/dish.action.types";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import Restaurant from "../../interfaces/restaurant";
+import { Dish } from "../../interfaces/dish";
 
-export const getRestaurantsAndDishes = (): any => {
-  return async (
-    dispatch: Dispatch<RestaurantDispatchTypes | DishesDispatchTypes>
-  ) => {
-    try {
-      dispatch({ type: RESTAURANTS_LOADING });
-      const [restaurants, dishes] =
-        await RestaurantService.getRestaurantsAndDishesData();
-      dispatch({ type: RESTAURANTS_SUCCESS, payload: restaurants });
-      dispatch({ type: DISHES_SUCCESS, payload: dishes });
-    } catch (error) {
-      console.log(error);
-      dispatch({ type: RESTAURANTS_FAIL });
-    }
-  };
-};
+export const getRestaurantsAndDishes = createAsyncThunk(
+  "restaurants/getRestaurantsAndDishes",
+  async () => {
+    const [restaurants, dishes]: [Restaurant[], Dish[]] =
+      await RestaurantService.getRestaurantsAndDishesData();
+    return { restaurants, dishes };
+  }
+);

@@ -9,16 +9,18 @@ import DishLabels from "../components/homepage/dishes/DishLabels";
 import { WeeklyChef } from "../components/homepage/WeeklyChef";
 import About from "../components/homepage/About";
 import { getRestaurantsAndDishes } from "../store/restaurant/restaurant.action";
-import { RootStore } from "../store/store";
+import { AppDispatch, RootStore } from "../store/store";
 
 const Homepage: React.FC = () => {
   const restaurants = useSelector(
     (state: RootStore) => state.restaurants.restaurants
   );
   const dishes = useSelector((state: RootStore) => state.dishes.dishes);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
-    dispatch(getRestaurantsAndDishes());
+    if (!restaurants || !dishes) {
+      dispatch(getRestaurantsAndDishes());
+    }
   }, []);
   const renderContent = () => {
     if (!restaurants || !dishes) {

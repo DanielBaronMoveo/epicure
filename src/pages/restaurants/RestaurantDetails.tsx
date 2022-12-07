@@ -3,14 +3,14 @@ import Restaurant from "../../interfaces/restaurant";
 import { useParams } from "react-router-dom";
 import RestaurantService from "../../services/restaurant.service";
 import { useDispatch, useSelector } from "react-redux";
-import { RootStore } from "../../store/store";
+import { AppDispatch, RootStore } from "../../store/store";
 import DishesTable from "../../components/homepage/DishesTable";
 import { getDishes } from "../../store/dish/dish.action";
 import { default as clock } from "../../assets/images/clock.svg";
 
 const RestaurantsDetails = () => {
   const dishes = useSelector((state: RootStore) => state.dishes.dishes);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const [restaurant, setRestaurant] = useState<Restaurant>();
   const { id } = useParams();
 
@@ -21,7 +21,9 @@ const RestaurantsDetails = () => {
 
   useEffect(() => {
     loadRestaurant();
-    dispatch(getDishes());
+    if (!dishes) {
+      dispatch(getDishes());
+    }
   }, []);
 
   if (!restaurant || !dishes) return <div>Loading...</div>;

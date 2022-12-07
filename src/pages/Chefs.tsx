@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllChefs } from "../store/chef/chef.action";
-import { RootStore } from "../store/store";
+import { AppDispatch, RootStore } from "../store/store";
 
 const Chefs = () => {
   const chefs = useSelector((state: RootStore) => state.chef.chefs);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
-    dispatch(getAllChefs());
+    if (!chefs) {
+      dispatch(getAllChefs());
+    }
   }, []);
   const renderContent = () => {
     if (!chefs) {
