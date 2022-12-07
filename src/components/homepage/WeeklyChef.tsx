@@ -4,7 +4,6 @@ import { Dish } from "../../interfaces/dish";
 import { useDispatch, useSelector } from "react-redux";
 import { RootStore } from "../../store/store";
 import { getChef } from "../../store/chef/chef.action";
-import MediaQuery from "react-responsive";
 import ChefRestaurantTable from "./ChefRestaurantTable";
 
 interface WeeklyChefProps {
@@ -34,12 +33,8 @@ export const WeeklyChef: React.FC<WeeklyChefProps> = ({ dishes }) => {
           <p>{chef.description}</p>
         </div>
       </div>
-      <MediaQuery maxWidth={600}>
-        <ChefRestaurantCarousel dishes={dishes} />
-      </MediaQuery>
-      <MediaQuery minWidth={600}>
-        <ChefRestaurantTable dishes={dishes} />
-      </MediaQuery>
+      <ChefRestaurantCarousel dishes={dishes} />
+      <ChefRestaurantTable dishes={dishes} />
     </div>
   );
 };

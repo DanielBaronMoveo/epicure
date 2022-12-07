@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import MediaQuery from "react-responsive";
 import Hero from "../components/homepage/hero/Hero";
 import RestaurantsCarousel from "../components/homepage/RestaurantsCarousel";
 import DishesCarousel from "../components/homepage/DishesCarousel";
@@ -28,14 +27,10 @@ const Homepage: React.FC = () => {
       return (
         <>
           <Hero />
-          <MediaQuery maxWidth={600}>
-            <RestaurantsCarousel restaurants={restaurants} />
-            <DishesCarousel dishes={dishes} />
-          </MediaQuery>
-          <MediaQuery minWidth={600}>
-            <RestaurantsTable restaurants={restaurants} />
-            <DishesTable dishes={dishes} />
-          </MediaQuery>
+          <RestaurantsCarousel restaurants={restaurants} />
+          <DishesCarousel dishes={dishes} />
+          <RestaurantsTable restaurants={restaurants} />
+          <DishesTable dishes={dishes} />
           <DishLabels />
           <WeeklyChef dishes={dishes} />
           <About />

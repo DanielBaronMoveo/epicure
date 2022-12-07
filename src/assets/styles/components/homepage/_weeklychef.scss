@@ -18,7 +18,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
-    padding: 0 20px;
+    // padding: 0 20px;
     figure {
       img {
         width: 90vw;
@@ -40,6 +40,7 @@
     }
     p {
       padding: 0px 16px;
+      margin: auto;
       width: 90%;
       font-family: "Helvetica Neue";
       font-style: normal;
@@ -51,15 +52,21 @@
     .chef-container {
       flex-direction: row;
       padding: 0;
-      div {
-        margin-right: 50px;
-        figure {
-          margin-right: 64px;
-        }
-        p {
-          max-width: 640px;
-        }
+
+      figure {
+        margin-right: 64px;
       }
+      p {
+        max-width: 640px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .weekly-chef-container {
+    .chef-table {
+      margin-left: 2rem;
     }
   }
 }

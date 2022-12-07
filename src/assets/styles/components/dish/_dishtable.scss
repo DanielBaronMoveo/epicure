@@ -49,3 +49,10 @@
     }
   }
 }
+
+// display none for mobile
+@media only screen and (max-width: 600px) {
+  .dish-table-container {
+    display: none;
+  }
+}

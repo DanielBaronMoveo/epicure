@@ -39,3 +39,10 @@
     }
   }
 }
+
+// display none for mobile
+@media only screen and (max-width: 600px) {
+  .restaurant-table-container {
+    display: none;
+  }
+}

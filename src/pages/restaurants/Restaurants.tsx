@@ -6,7 +6,6 @@ import { RestaurantCard } from "../../components/restaurants/RestaurantCard";
 import RestaurantNavbar from "../../components/restaurants/RestaurantNavbar";
 import Restaurant from "../../interfaces/restaurant";
 import RestaurantsFilter from "../../components/restaurants/RestaurantsFilter";
-import MediaQuery from "react-responsive";
 
 const Restaurants = () => {
   const restaurants = useSelector(
@@ -33,9 +32,7 @@ const Restaurants = () => {
         filteredRestaurants={filteredRestaurants}
         filterRestaurants={temp}
       />
-      <MediaQuery minWidth={600}>
-        <RestaurantsFilter />
-      </MediaQuery>
+      <RestaurantsFilter />
       <div className="restaurant-card-container">
         {restaurants.map((restaurant) => (
           <RestaurantCard restaurant={restaurant} key={restaurant._id} />
