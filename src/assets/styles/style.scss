@@ -1,0 +1,29 @@
+// BASICS
+@import "./basics/base.scss";
+@import "./basics/helpers.scss";
+
+// COMPONENTS
+@import "./components/header/header.scss";
+@import "./components/header/cartslide.scss";
+@import "./components/header/searchslide.scss";
+@import "./components/header/usermodal.scss";
+@import "./components/footer/footer.scss";
+@import "./components/dish/dishcard.scss";
+@import "./components/dish/dishlabels.scss";
+@import "./components/dish/dishtable.scss";
+@import "./components/homepage/hero/hero.scss";
+@import "./components/homepage/about.scss";
+@import "./components/homepage/weeklychef.scss";
+@import "./components/carousel/restaurantcarousel.scss";
+@import "./components/carousel/dishcarousel.scss";
+@import "./components/restaurant/restauranttable.scss";
+@import "./components/restaurant/chefrestauranttable.scss";
+@import "./components/restaurant/restaurantcard.scss";
+@import "./components/restaurant/restaurantnavbar.scss";
+@import "./components/restaurant/restaurantfilter.scss";
+
+// PAGES
+@import "./pages/homepage.scss";
+@import "./pages/chefs.scss";
+@import "./pages/restaurantdetails.scss";
+@import "./pages/restaurants.scss";
