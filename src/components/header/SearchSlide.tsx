@@ -12,7 +12,7 @@ const SearchSlide: React.FC<SearchSlideProps> = ({
   toggleSearch,
 }) => {
   return (
-    <div className={`search-container ${search ? "show-serach" : ""}`}>
+    <div className={`search-container ${search ? "show-search" : ""}`}>
       <img src={x} onClick={toggleSearch} className="nav-icon" />
       <h1>Search</h1>
       <div>

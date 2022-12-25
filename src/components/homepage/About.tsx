@@ -11,6 +11,21 @@ const About = () => {
           <img className="logo" src={logo} alt="Epicure logo" />
         </div>
         <div className="about-container">
+          <div>
+            <div className="about-title">About us:</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+              lacus vel justo fermentum bibendum non eu ipsum. Cras porta
+              malesuada eros, eget blandit turpis suscipit at. Vestibulum sed
+              massa in magna sodales porta. Vivamus elit urna, dignissim a
+              vestibulum.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+              lacus vel justo fermentum bibendum no eu ipsum. Cras porta
+              malesuada eros.
+            </p>
+          </div>
           <div className="download">
             <div className="button">
               <img src={google} alt="google logo" />
@@ -27,19 +42,6 @@ const About = () => {
               </div>
             </div>
           </div>
-          <span>About us:</span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus
-            vel justo fermentum bibendum non eu ipsum. Cras porta malesuada
-            eros, eget blandit turpis suscipit at. Vestibulum sed massa in magna
-            sodales porta. Vivamus elit urna, dignissim a vestibulum.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus
-            vel justo fermentum bibendum non eu ipsum. Cras porta malesuada
-            eros, eget blandit turpis suscipit at. Vestibulum sed massa in magna
-            sodales porta. Vivamus elit urna, dignissim a vestibulum.
-          </p>
         </div>
       </div>
     </div>

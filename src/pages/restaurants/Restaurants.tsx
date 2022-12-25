@@ -6,13 +6,12 @@ import { RestaurantCard } from "../../components/restaurants/RestaurantCard";
 import RestaurantNavbar from "../../components/restaurants/RestaurantNavbar";
 import Restaurant from "../../interfaces/restaurant";
 import RestaurantsFilter from "../../components/restaurants/RestaurantsFilter";
+import { ThreeCircles } from "react-loader-spinner";
 
 const Restaurants = () => {
   const restaurants = useSelector(
     (state: RootStore) => state.restaurants.restaurants
   );
-  console.log(restaurants);
-
   const dispatch = useDispatch<AppDispatch>();
   const [filteredRestaurants, setFilteredRestaurants] = useState<
     Restaurant[] | null | undefined
@@ -20,9 +19,7 @@ const Restaurants = () => {
   useEffect(() => {
     if (!restaurants) {
       dispatch(getRestaurantsAndDishes());
-      console.log(restaurants);
     }
-    // dispatch(getRestaurantsAndDishes());
     setFilteredRestaurants(restaurants);
   }, []);
 
@@ -30,21 +27,41 @@ const Restaurants = () => {
     console.log(filteredRestaurants);
   };
 
-  if (!restaurants) return <div>Loading...</div>;
-  return (
-    <div className="restaurants-page-container">
-      <h6>Restaurants</h6>
-      <RestaurantNavbar
-        filteredRestaurants={filteredRestaurants}
-        filterRestaurants={temp}
-      />
-      <RestaurantsFilter />
-      <div className="restaurant-card-container">
-        {restaurants.map((restaurant) => (
-          <RestaurantCard restaurant={restaurant} key={restaurant._id} />
-        ))}
+  if (!restaurants)
+    return (
+      <div className="loader">
+        <ThreeCircles
+          height="100"
+          width="100"
+          color="#F9F4EA"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
       </div>
-    </div>
+    );
+  return (
+    <>
+      <div className="container space-header">
+        <h6 className="restaurants-title">Restaurants</h6>
+        <RestaurantNavbar
+          filteredRestaurants={filteredRestaurants}
+          filterRestaurants={temp}
+        />
+      </div>
+      <RestaurantsFilter />
+      <div className="container">
+        <div className="restaurant-card-container">
+          {restaurants.map((restaurant) => (
+            <RestaurantCard item={restaurant} key={restaurant._id} />
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 

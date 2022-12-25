@@ -21,9 +21,12 @@
 @import "./components/restaurant/restaurantcard.scss";
 @import "./components/restaurant/restaurantnavbar.scss";
 @import "./components/restaurant/restaurantfilter.scss";
+@import "./components/order/order.scss";
+@import "./components/order/orderpop.scss";
 
 // PAGES
 @import "./pages/homepage.scss";
 @import "./pages/chefs.scss";
 @import "./pages/restaurantdetails.scss";
 @import "./pages/restaurants.scss";
+@import "./pages/checkout.scss";

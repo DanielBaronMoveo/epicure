@@ -8,14 +8,13 @@ interface RestaurantsTableProps {
 }
 
 const RestaurantsTable: React.FC<RestaurantsTableProps> = ({ restaurants }) => {
-  if (!restaurants) return <div>Loading...</div>;
   return (
     <div className="restaurant-table-container">
       <h5>POPULAR RESTAURANTS IN EPICURE:</h5>
       <div className="restaurants">
         {restaurants
           .map((restaurant) => (
-            <RestaurantCard key={restaurant._id} restaurant={restaurant} />
+            <RestaurantCard key={restaurant._id} item={restaurant} />
           ))
           .slice(0, 3)}
       </div>

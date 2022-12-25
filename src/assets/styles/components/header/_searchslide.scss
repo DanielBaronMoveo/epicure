@@ -1,18 +1,12 @@
 .search-container {
   display: flex;
   top: 0;
-  //   right: ${(props: { search: boolean }) => (props.search ? '0%' : '-100%;')};
   right: 0%;
-  //   &.show-search {
-  //     right: 0;
-  //   }
   transition: left 0.2s;
-  height: 367px;
+  height: 377px;
   width: 100%;
-  max-width: 377px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: 20px;
   z-index: 100;
   font-family: "Helvetica Neue";
@@ -35,11 +29,12 @@
   }
   & .nav-icon {
     position: absolute;
-    top: 6%;
+    top: 5.5%;
     left: 6%;
   }
 
   div {
+    margin-top: 77px;
     input {
       width: 280px;
       text-align: center;
@@ -51,6 +46,19 @@
       height: 20px;
       position: absolute;
       margin: 5px;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    margin-top: 45px;
+    width: 377px;
+    h1 {
+      display: none;
+    }
+    .nav-icon {
+      display: none;
+    }
+    div {
+      margin-top: 77px;
     }
   }
 }

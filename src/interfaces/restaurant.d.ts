@@ -2,6 +2,7 @@ interface Restaurant {
   _id: string;
   name: string;
   chef: string;
+  chefId: string;
   opens: string;
   closes: string;
   thumb: string;

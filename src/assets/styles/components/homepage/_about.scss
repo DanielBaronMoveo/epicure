@@ -1,10 +1,9 @@
 .about-main-container {
   width: 100%;
-  max-width: 900px;
-  padding: 10px 20px;
+  max-width: 1200px;
+  padding: 24px 15px;
   z-index: 2;
   background-color: #fafafa;
-
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -17,8 +16,9 @@
   }
   .about-container {
     min-width: 331px;
-    & span {
-      text-align: left;
+    flex-direction: column-reverse;
+    display: flex;
+    & .about-title {
       font-family: "Helvetica Neue";
       font-style: normal;
       font-weight: 200;
@@ -26,49 +26,62 @@
       line-height: 35px;
       letter-spacing: 1.25px;
       text-transform: uppercase;
+      padding-bottom: 16px;
     }
 
     & p {
-      text-align: left;
-      font-size: 14px;
-      font-weight: 200;
+      margin: 0;
       font-family: "Helvetica Neue";
       font-style: normal;
-      line-height: 20px;
+      font-weight: 200;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 2.14px;
+      padding-right: 27px;
+      padding-bottom: 1px;
+      &:last-child {
+        // padding-bottom: 48px;
+        padding-right: 52px;
+      }
     }
 
     .download {
       display: flex;
       flex-direction: column;
-
+      margin-bottom: 25px;
       .button {
+        width: 180px;
+        height: 52px;
         margin: 5px;
         padding: 5px 5px;
-        border: 0.5px solid black;
-        border-radius: 7px;
+        border: 0.5px solid #000000;
+        border-radius: 10px;
         display: flex;
-        max-width: 105px;
+        align-items: center;
         text-align: center;
-
         & img {
-          margin-right: 3px;
+          margin-left: 5px;
+          margin-right: 7px;
+          width: 23px;
+          height: 30px;
         }
         .line {
-          font-size: 9px;
+          width: 130px;
+          font-size: 14px;
         }
         .marka {
-          font-size: 12px;
+          width: 130px;
+          font-size: 16px;
         }
       }
     }
   }
 
   @media only screen and (min-width: 600px) {
-    /* max-width: 900px; */
-    padding: 20px;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
+    padding: 48px 15px;
     .logo {
       width: 180px;
       height: 100%;
@@ -79,8 +92,11 @@
     .about-container {
       max-width: 500px;
       flex-direction: column;
-      position: relative;
-
+      .about-title {
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: 2.14px;
+      }
       p {
         font-size: 20px;
         line-height: 30px;
@@ -88,14 +104,14 @@
       }
       .download {
         flex-direction: row;
-        position: absolute;
-        bottom: 0;
+        margin-bottom: 0;
       }
     }
   }
 }
 
 .about-wrapper {
+  margin-top: 48px;
   width: 100%;
   background-color: #fafafa;
   display: flex;

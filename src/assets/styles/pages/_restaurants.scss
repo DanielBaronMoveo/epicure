@@ -1,35 +1,64 @@
-.restaurants-page-container {
-  margin: 10px 0;
-  width: 100%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h6 {
-    font-family: "Helvetica Neue";
-    font-style: normal;
-    font-weight: 200;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    letter-spacing: 1.92px;
-    text-transform: uppercase;
-  }
-  @media only screen and (min-width: 600px) {
-    h6 {
-      display: none;
-    }
+// .restaurants-page {
+//   // margin: 10px 0;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+.restaurants-title {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 22px;
+  padding-top: 14px;
+  // text-align: center;
+  letter-spacing: 1.92px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 600px) {
+  .restaurants-title {
+    display: none;
   }
 }
+// }
 
 .restaurant-card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
+  grid-gap: 25px;
+
+  .restaurant-card {
+    width: 100%;
+    height: 288px;
+    img {
+      height: 207px;
+    }
+    // img {
+    //   width: 100%;
+    //   height: 207px;
+    // }
+  }
   @media only screen and (min-width: 600px) {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 20px;
-    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+    grid-gap: 24px;
+
+    .restaurant-card {
+      // height: 422.82px;
+      height: 100%;
+      width: 100%;
+
+      .stars {
+        height: 40px;
+        margin: 10px 0;
+        img {
+          height: 40px;
+        }
+      }
+    }
   }
 }

@@ -14,6 +14,7 @@ export const dishesData: Dish[] = [
     _id: "D1",
     name: "Pad Ki Mao",
     restaurant: "Tiger Lilly",
+    restaurantId: "1",
     ingredients:
       "Shrimps, Glass Noodles, Kemiri Nuts, Shallots,Lemon Grass, Magic Chili Brown Coconut",
     image: padKiMaoImg,
@@ -25,6 +26,7 @@ export const dishesData: Dish[] = [
     _id: "D2",
     name: "Garbanzo Frito",
     restaurant: "Kab Kem",
+    restaurantId: "1",
     ingredients:
       "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
     image: garbanzoFritoImg,
@@ -36,6 +38,7 @@ export const dishesData: Dish[] = [
     _id: "D3",
     name: "Smoked Pizza",
     restaurant: "Popina",
+    restaurantId: "1",
     ingredients: "Basil dough, cashew 'butter', demi-glace, bison & radish",
     image: smokedPizzaImg,
     icon: vegetarianIcon,
@@ -46,6 +49,7 @@ export const dishesData: Dish[] = [
     _id: "D4",
     name: "Masala Dosa",
     restaurant: "Kab Kem",
+    restaurantId: "1",
     ingredients:
       "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
     image: masalaDosaImg,
@@ -57,6 +61,7 @@ export const dishesData: Dish[] = [
     _id: "D5",
     name: "Seafood Paella",
     restaurant: "Kab Kem",
+    restaurantId: "1",
     ingredients:
       "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
     image: seafoodPaellaImg,
@@ -68,6 +73,7 @@ export const dishesData: Dish[] = [
     _id: "D6",
     name: "Potato Chips",
     restaurant: "Kab Kem",
+    restaurantId: "1",
     ingredients:
       "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
     image: masalaDosaImg,
@@ -79,6 +85,7 @@ export const dishesData: Dish[] = [
     _id: "D7",
     name: "Red Farm",
     restaurant: "Popina",
+    restaurantId: "1",
     ingredients: "Tofu, Spekkoek Peanuts, Spicy Manis, Pear Yakitori",
     image: redFarmImg,
     icon: veganIcon,
@@ -89,6 +96,7 @@ export const dishesData: Dish[] = [
     _id: "D8",
     name: "Ta Ma-La-Ko",
     restaurant: "Popina",
+    restaurantId: "1",
     ingredients:
       "Green Papaya, Mango, Chukka, Chili, Mint, Kaffir, Lime, Cashew, Akaya, Cham",
     image: tamalakoImg,

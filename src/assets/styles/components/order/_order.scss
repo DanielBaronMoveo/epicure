@@ -1,0 +1,266 @@
+.order-overlay {
+  inset: 0;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.order-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  animation: slide-in 0.3s ease-out;
+  // overflow: scroll;
+  flex-wrap: unset !important;
+
+  @keyframes slide-in {
+    from {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .controls-container {
+    background-color: #fff;
+    height: 35px;
+    width: 100%;
+    padding: 5px;
+    position: relative;
+    img {
+      position: absolute;
+      left: 5%;
+      top: 25%;
+      cursor: pointer;
+    }
+    @media only screen and (min-width: 600px) {
+      display: block;
+      background-color: transparent;
+      position: absolute;
+      top: -3.5%;
+      left: -3.5%;
+      img {
+        content: url("../../../images/white-x.svg");
+      }
+    }
+  }
+
+  .dish-image {
+    width: 100%;
+    height: 30%;
+  }
+
+  .dish-details {
+    // width: 60%;
+    // height: 20%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+
+    h1 {
+      font-family: "Helvetica Neue";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 2.67px;
+      margin-bottom: 14px;
+    }
+    h4 {
+      width: 318px;
+      height: 54px;
+      font-family: "Helvetica Neue";
+      font-style: normal;
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 1.97px;
+      margin-bottom: 40px;
+    }
+
+    .labels-icon {
+      height: 25px;
+      //   margin: 5px 0;
+      margin-bottom: 5px;
+      display: none;
+
+      @media only screen and (min-width: 600px) {
+        display: block;
+      }
+    }
+
+    .price {
+      width: 100%;
+      height: 5px;
+      display: none;
+      .lines {
+        height: 0.8px !important;
+        display: inline-flex;
+        flex: 1;
+        margin: 14px 4px 10px 4px;
+        background-color: #979797;
+      }
+
+      @media only screen and (min-width: 600px) {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    @media only screen and (min-width: 600px) {
+      justify-content: center;
+      align-items: center;
+      height: 24%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 20px;
+
+    h5 {
+      padding: 0;
+      border-bottom: 1px solid #de9200e5;
+      font-family: "Helvetica Neue";
+      font-style: normal;
+      font-weight: 200;
+      font-size: 20px;
+      line-height: 18px;
+      text-align: center;
+      letter-spacing: 1.97px;
+    }
+
+    .radio-container,
+    .checkbox-container {
+      margin: 10px 0;
+      label {
+        font-family: "Helvetica Neue";
+        font-weight: 200;
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 1.2px;
+        padding: 0 10px;
+      }
+    }
+
+    .radio-container {
+      .radio {
+        width: 150px;
+      }
+    }
+
+    .checkbox-container {
+      h5 {
+        width: fit-content;
+      }
+      .checkbox {
+        width: 180px;
+      }
+
+      @media only screen and (min-width: 600px) {
+        align-items: center;
+      }
+    }
+
+    .quantity-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 10px 0;
+
+      .quantity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 0;
+        input {
+          width: 30px;
+          text-align: center;
+          border: none;
+          font-family: "Helvetica Neue";
+          font-style: normal;
+          font-weight: 200;
+          font-size: 18px;
+          line-height: 18px;
+          text-align: center;
+          letter-spacing: 1.97px;
+        }
+
+        button {
+          width: 30px;
+          height: 30px;
+          border: none;
+          background-color: #fff;
+          font-size: 20px;
+          font-weight: 300;
+          color: #000;
+          text-align: center;
+          border-radius: 50%;
+
+          &:hover {
+            cursor: pointer;
+          }
+          &:active {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #fff;
+          }
+          transition: all 0.2s ease-in-out;
+        }
+      }
+
+      @media only screen and (min-width: 600px) {
+        align-items: center;
+      }
+    }
+
+    .add-bag-btn {
+      width: 180px;
+      height: 40px;
+      font-family: "Helvetica Neue";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: 2.67px;
+      text-transform: uppercase;
+      background: #000000;
+      border: 1px solid #000000;
+      color: #fff;
+    }
+
+    @media only screen and (min-width: 600px) {
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.order-modal {
+  @media only screen and (min-width: 600px) {
+    width: 90%;
+    height: 90%;
+    max-width: 500px;
+
+    .dish-details {
+      margin-top: 20px;
+    }
+  }
+}

@@ -27,12 +27,25 @@
   }
 }
 
+.space-header {
+  margin-top: 45px;
+}
+
 .clean-link {
   text-decoration: none;
+  color: inherit;
 }
 
 .clean-list {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.pointer {
+  cursor: pointer;
 }

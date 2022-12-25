@@ -4,16 +4,16 @@ import Restaurant from "../../interfaces/restaurant";
 
 interface RestaurantNavbarProps {
   filteredRestaurants: Restaurant[] | null | undefined;
-  filterRestaurants: any;
+  filterRestaurants: (filter: string) => void;
 }
 
 const RestaurantNavbar: React.FC<RestaurantNavbarProps> = ({
-  filteredRestaurants,
+  // filteredRestaurants,
   filterRestaurants,
 }) => {
   return (
     <div className="nav-container">
-      <h5>
+      <h5 className="active">
         <NavLink
           className="clean-link"
           to="/restaurants"

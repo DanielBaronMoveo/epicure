@@ -12,7 +12,7 @@ const ChefRestaurantTable: React.FC<ChefRestaurantTableProps> = ({
   return (
     <div className="chef-table">
       {dishes
-        .map((dish) => <DishCard key={dish._id} dish={dish} isChef={true} />)
+        .map((dish) => <DishCard key={dish._id} item={dish} isChef={true} />)
         .slice(3, 6)}
     </div>
   );

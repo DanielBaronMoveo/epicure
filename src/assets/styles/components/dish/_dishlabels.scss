@@ -3,19 +3,27 @@
   background-color: #fafafa;
   padding: 0 20px;
   margin-top: 50px;
+  img {
+    width: 60px;
+    height: 50px;
+  }
   h6 {
     font-family: "Helvetica Neue";
-    font-style: normal;
     font-weight: 200;
     font-size: 18px;
     line-height: 35px;
     text-align: center;
     letter-spacing: 1.25px;
     text-transform: uppercase;
-    padding: 20px 0;
+    padding-top: 24px;
+    padding-bottom: 32px;
+    &:after {
+      content: "Signature Dish of:";
+    }
   }
   p {
-    padding: 20px 0;
+    margin: 0;
+    padding: 33.53px 0;
     font-family: "Helvetica Neue";
     font-style: normal;
     font-weight: 200;
@@ -23,6 +31,10 @@
     line-height: 30px;
     text-align: center;
     letter-spacing: 1.97px;
+    // last p padding bottom of 24px
+    &:last-child {
+      padding-bottom: 24.02px;
+    }
   }
 
   .label-wrapper {
@@ -51,6 +63,34 @@
     }
     @media only screen and (min-width: 600px) {
       flex-direction: row;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    margin-top: 80px;
+    h6:after {
+      content: "The meaning of our icons:";
+      font-family: "Helvetica Neue";
+      font-style: normal;
+      font-weight: 200;
+      font-size: 30px;
+      line-height: 35px;
+      text-align: center;
+      letter-spacing: 2.14px;
+      text-transform: uppercase;
+      color: #000000;
+    }
+    .label-wrapper {
+      p {
+        font-family: "Helvetica Neue";
+        font-style: normal;
+        font-weight: 200;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+        letter-spacing: 1.97px;
+        color: #000000;
+        padding-bottom: 35px;
+      }
     }
   }
 }

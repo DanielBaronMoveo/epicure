@@ -8,6 +8,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+p,
 h1,
 h2,
 h3,
@@ -17,21 +18,17 @@ h6 {
   margin: 0;
 }
 
-.app-container {
-  height: 100vh;
+.container {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-// main {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-.clean-list {
-  list-style: none;
-}
-
-.clean-link {
-  text-decoration: none;
-  color: inherit;
+.loader {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

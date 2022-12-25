@@ -10,6 +10,7 @@ import nitzanRazImg from "../assets/images/nitzan-raz-image.png";
 import yuvalBenNeriahImg from "../assets/images/yuval-ben-neriah-image.png";
 
 export const chefData: Chef = {
+  _id: "c1",
   name: "Yossi Shitrit",
   image: yossiShitritImg,
   description: `Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, 
@@ -19,6 +20,7 @@ export const chefData: Chef = {
 
 export const chefsData: Chef[] = [
   {
+    _id: "c1",
     name: "Yossi Shitrit",
     image: yossiShitritImg,
     description: `Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, 
@@ -26,6 +28,7 @@ export const chefsData: Chef[] = [
     located in Moshav  Udim. Shitrit's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.`,
   },
   {
+    _id: "c2",
     name: "Asaf Granit",
     image: asafGranitImg,
     description: `Chef Asaf Granit has been living and breathing his culinary dreams for more than two decades, 
@@ -33,6 +36,7 @@ export const chefsData: Chef[] = [
     located in Moshav  Udim. Granit's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.`,
   },
   {
+    _id: "c3",
     name: "Aviv Moshe",
     image: avivMosheImg,
     description: `Chef Aviv Moshe has been living and breathing his culinary dreams for more than two decades, 
@@ -40,6 +44,7 @@ export const chefsData: Chef[] = [
     located in Moshav  Udim. Moshe's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.`,
   },
   {
+    _id: "c4",
     name: "Eyal Shani",
     image: eyalShaniImg,
     description: `Chef Eyal Shani has been living and breathing his culinary dreams for more than two decades, 
@@ -47,6 +52,7 @@ export const chefsData: Chef[] = [
     located in Moshav  Udim. Shani's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.`,
   },
   {
+    _id: "c5",
     name: "Meir Adoni",
     image: meirAdoniImg,
     description: `Chef Meir Adoni has been living and breathing his culinary dreams for more than two decades,
@@ -54,6 +60,7 @@ export const chefsData: Chef[] = [
     located in Moshav  Udim. Adoni's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.`,
   },
   {
+    _id: "c6",
     name: "Omer Miller",
     image: omerMillerImg,
     description: `Chef Omer Miller has been living and breathing his culinary dreams for more than two decades,
@@ -61,6 +68,7 @@ export const chefsData: Chef[] = [
     located in Moshav  Udim. Miller's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.`,
   },
   {
+    _id: "c7",
     name: "Shahaf Shabtay",
     image: shahafShabtayImg,
     description: `Chef Shahaf Shabtay has been living and breathing his culinary dreams for more than two decades,
@@ -68,6 +76,7 @@ export const chefsData: Chef[] = [
     located in Moshav  Udim. Shabtay's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.`,
   },
   {
+    _id: "c8",
     name: "Nitzan Raz",
     image: nitzanRazImg,
     description: `Chef Nitzan Raz has been living and breathing his culinary dreams for more than two decades,
@@ -75,6 +84,7 @@ export const chefsData: Chef[] = [
     located in Moshav  Udim. Raz's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.`,
   },
   {
+    _id: "c9",
     name: "Yuval Ben Neriah",
     image: yuvalBenNeriahImg,
     description: `Chef Yuval Ben Neriah has been living and breathing his culinary dreams for more than two decades,

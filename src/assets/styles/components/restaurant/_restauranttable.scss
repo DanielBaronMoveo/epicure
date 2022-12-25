@@ -1,21 +1,25 @@
 .restaurant-table-container {
-  padding: 40px 0 50px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1px;
+  max-width: 1200px;
   h5 {
     font-family: "Helvetica Neue";
     font-style: normal;
     font-weight: 200;
-    font-size: 18px;
-    line-height: 24px;
-    padding-left: 20px;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
     letter-spacing: 1.25px;
     text-transform: uppercase;
+
+    padding-top: 80px;
+    padding-bottom: 40px;
   }
   .restaurants {
     display: flex;
+    gap: 24px;
+    width: 100%;
   }
   .rest-nav {
     display: flex;
@@ -23,14 +27,16 @@
     justify-content: flex-end;
     align-items: center;
     place-self: flex-end;
-    padding: 0 20px;
+    // padding: 0 20px;
     gap: 12px;
+    padding-top: 40px;
     a {
       font-family: "Helvetica Neue";
       font-style: normal;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 24px;
       line-height: 35px;
+      text-align: right;
       letter-spacing: 2px;
       text-transform: capitalize;
       color: inherit;

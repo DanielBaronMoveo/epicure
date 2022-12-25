@@ -10,6 +10,10 @@ import { WeeklyChef } from "../components/homepage/WeeklyChef";
 import About from "../components/homepage/About";
 import { getRestaurantsAndDishes } from "../store/restaurant/restaurant.action";
 import { AppDispatch, RootStore } from "../store/store";
+import { ThreeCircles } from "react-loader-spinner";
+import Carousel from "../components/carousel/carousel";
+import { DishCard } from "../components/homepage/dishes/DishCard";
+import { RestaurantCard } from "../components/restaurants/RestaurantCard";
 
 const Homepage: React.FC = () => {
   const restaurants = useSelector(
@@ -24,23 +28,46 @@ const Homepage: React.FC = () => {
   }, []);
   const renderContent = () => {
     if (!restaurants || !dishes) {
-      return <div>Loading...</div>;
+      return (
+        <div className="loader">
+          <ThreeCircles
+            height="100"
+            width="100"
+            color="#F9F4EA"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+            ariaLabel="three-circles-rotating"
+            outerCircleColor=""
+            innerCircleColor=""
+            middleCircleColor=""
+          />
+        </div>
+      );
     } else
       return (
-        <>
+        <div className="space-header">
           <Hero />
-          <RestaurantsCarousel restaurants={restaurants} />
-          <DishesCarousel dishes={dishes} />
-          <RestaurantsTable restaurants={restaurants} />
-          <DishesTable dishes={dishes} />
+          <div className="container">
+            <RestaurantsCarousel>
+              <Carousel data={restaurants} Content={RestaurantCard} />
+            </RestaurantsCarousel>
+            <DishesCarousel>
+              <Carousel data={dishes} Content={DishCard} />
+            </DishesCarousel>
+            <RestaurantsTable restaurants={restaurants} />
+            <DishesTable dishes={dishes} />
+          </div>
           <DishLabels />
-          <WeeklyChef dishes={dishes} />
+          <div className="container">
+            <WeeklyChef dishes={dishes} />
+          </div>
           <About />
-        </>
+        </div>
       );
   };
 
-  return <div className="home-page-container">{renderContent()}</div>;
+  return renderContent();
 };
 
 export default Homepage;

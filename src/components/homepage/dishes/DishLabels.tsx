@@ -6,7 +6,7 @@ import { default as vegan } from "../../../assets/images/vegan-icon.svg";
 const DishLabels = () => {
   return (
     <div className="dish-label-container">
-      <h6>Signature dish of:</h6>
+      <h6></h6>
       <div className="label-wrapper">
         <div>
           <img src={spicy} alt="Spicy" width="44" />

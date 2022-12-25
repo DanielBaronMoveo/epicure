@@ -1,9 +1,8 @@
 .weekly-chef-container {
-  margin: 60px 0;
+  width: 100%;
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  row-gap: 20px;
   h6 {
     font-family: "Helvetica Neue";
     font-style: normal;
@@ -12,40 +11,56 @@
     line-height: 35px;
     letter-spacing: 1.25px;
     text-transform: uppercase;
+    margin-bottom: 16px;
   }
   .chef-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 20px;
-    // padding: 0 20px;
-    figure {
-      img {
-        width: 90vw;
-        max-width: 433px;
-        object-fit: cover;
-      }
-      figcaption {
-        margin-top: -54px;
-        padding: 10px 0;
-        background-color: #fff;
-        opacity: 0.8;
-        font-family: "Helvetica Neue";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        text-align: center;
-        letter-spacing: 1.25px;
+    justify-content: center;
+
+    .chef-figure {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 24px;
+      figure {
+        margin: 0;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        figcaption {
+          height: 51px;
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff;
+          opacity: 0.8;
+          font-family: "Helvetica Neue";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          text-align: center;
+          letter-spacing: 1.25px;
+        }
       }
     }
-    p {
-      padding: 0px 16px;
-      margin: auto;
-      width: 90%;
-      font-family: "Helvetica Neue";
-      font-style: normal;
-      font-weight: 200;
-      font-size: 18px;
+    .chef-desc {
+      p {
+        font-family: "Helvetica Neue";
+        font-style: normal;
+        font-weight: 200;
+        font-size: 18px;
+        line-height: 28px;
+        text-align: justify;
+        letter-spacing: 1.25px;
+      }
     }
   }
   @media only screen and (min-width: 750px) {
@@ -65,8 +80,42 @@
 
 @media only screen and (min-width: 750px) {
   .weekly-chef-container {
-    .chef-table {
-      margin-left: 2rem;
+    margin-top: 80px;
+    width: 100%;
+    max-width: 1200px;
+    h6 {
+      align-self: center;
+      margin-bottom: 40px;
+    }
+    .chef-container {
+      gap: 63.5px;
+      .chef-figure {
+        width: 478px;
+        figure {
+          padding: 0;
+          figcaption {
+            height: 78px;
+            font-family: "Helvetica Neue";
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 47px;
+            text-align: center;
+            letter-spacing: 2.67px;
+          }
+        }
+      }
+      .chef-desc {
+        p {
+          margin: 0;
+          font-family: "Helvetica Neue";
+          font-style: normal;
+          font-weight: 200;
+          font-size: 24px;
+          line-height: 35px;
+          text-align: justify;
+          letter-spacing: 1.25px;
+        }
+      }
     }
   }
 }

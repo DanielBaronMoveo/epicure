@@ -1,41 +1,62 @@
 .restaurant-card {
-  margin: 5px;
-  width: 100%;
-  height: 100%;
-  min-width: 150px;
-  max-width: 200px;
-  background: #f9f4ea;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  width: 245px;
+  height: 232.8px;
+  background-color: #f9f4ea;
   img {
     width: 100%;
+    height: 151.8px;
   }
   h2 {
     font-family: "Helvetica Neue";
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 21px;
     letter-spacing: 2.67px;
-    padding: 0 10px;
+    color: #000000;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-bottom: 8px;
   }
-  h3 {
+  p {
     font-family: "Helvetica Neue";
     font-style: normal;
     font-weight: 200;
-    font-size: 13px;
-    line-height: 24px;
-    letter-spacing: 1.2px;
-    padding: 0 10px;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1.97px;
+    padding: 0;
+    margin-bottom: 16px;
+    margin-left: 16px;
+    text-transform: none;
   }
   .stars {
     display: none;
   }
   @media only screen and (min-width: 600px) {
+    // position: relative;
+    height: 422.82px;
+    width: 379px;
     h2,
-    h3 {
+    p {
       text-align: center;
+      margin: 0;
+    }
+    h2 {
+      font-family: "Helvetica Neue";
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 47px;
+      letter-spacing: 2.67px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    p {
+      font-family: "Helvetica Neue";
+      font-weight: 200;
+      font-size: 24px;
+      line-height: 30px;
+      letter-spacing: 1.97px;
     }
     .stars {
       display: flex;
@@ -43,16 +64,20 @@
       align-items: center;
       justify-content: center;
       padding: 10px 0;
+      // position: absolute;
+      // bottom: 15px;
+      // left: 81px;
 
       img {
-        width: 25px;
+        width: 40px;
+        height: 40px;
       }
     }
   }
   @media only screen and (min-width: 850px) {
-    min-width: 260px;
     img {
       width: 100%;
+      height: 263px;
     }
   }
 }

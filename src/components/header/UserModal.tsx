@@ -20,7 +20,7 @@ const UserModal: React.FC<UserModalProps> = ({ isUser, toggleUser }) => {
         <form>
           <label>
             Email address
-            <input type="email" placeholder="name@gmail.com" />
+            <input type="email" placeholder="Name@gmail.co.il" />
           </label>
           <label>
             Password
