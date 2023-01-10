@@ -11,7 +11,7 @@ import { ThreeCircles } from "react-loader-spinner";
 import { Dish } from "../../interfaces/dish";
 
 const RestaurantsDetails = () => {
-  const dishes = useSelector((state: RootStore) => state?.dishes.dishes);
+  const dishes = useSelector((state: RootStore) => state.dishes.dishes);
   const dispatch = useDispatch<AppDispatch>();
   const [restaurant, setRestaurant] = useState<Restaurant>();
   const [restaurantDishes, setRestaurantDishes] = useState<Dish[] | null>([]);
@@ -19,17 +19,17 @@ const RestaurantsDetails = () => {
 
   const loadRestaurant = async () => {
     const restaurant = await RestaurantService.getRestaurantById(id);
-    const restaurantDishes = RestaurantService.getRestaurantDishes(id, dishes);
+    const resDishes = await RestaurantService.getRestaurantDishes(id, dishes);
+    setRestaurantDishes(resDishes);
     setRestaurant(restaurant);
-    setRestaurantDishes(restaurantDishes);
   };
 
   useEffect(() => {
-    loadRestaurant();
     if (!dishes) {
       dispatch(getDishes());
     }
-  }, []);
+    loadRestaurant();
+  }, [dishes]);
 
   if (!restaurant || !restaurantDishes)
     return (
@@ -56,7 +56,7 @@ const RestaurantsDetails = () => {
       <div className="container flex column">
         <div className="details">
           <h5>{restaurant.name}</h5>
-          <h6>{restaurant.chef}</h6>
+          <h6>{restaurant.chef.map((chef) => chef.name)}</h6>
           <div className="rest-open">
             <img src={clock} alt="" />
             <p>Open now</p>

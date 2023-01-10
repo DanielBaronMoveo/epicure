@@ -3,4 +3,5 @@ export interface Chef {
   name: string;
   image: string;
   description: string;
+  chefOfTheWeek: boolean;
 }

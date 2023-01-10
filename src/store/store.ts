@@ -3,12 +3,14 @@ import dishReducer from "./dish/dish.slice";
 import restaurantReducer from "./restaurant/restaurant.slice";
 import chefReducer from "./chef/chef.slice";
 import cartReducer from "./cart/cart.slice";
+import errorReducer from "./error/error.slice";
 
 const rootReducer = combineReducers({
   dishes: dishReducer,
   restaurants: restaurantReducer,
   chef: chefReducer,
   cart: cartReducer,
+  error: errorReducer,
 });
 export const store = configureStore({
   reducer: rootReducer,

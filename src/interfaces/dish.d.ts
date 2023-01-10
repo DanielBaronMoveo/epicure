@@ -1,8 +1,9 @@
 export interface Dish {
   _id: string;
   name: string;
-  restaurant: string;
-  restaurantId: string;
+  restaurant: {
+    _id: string;
+  };
   ingredients: string;
   image: string;
   icon: string;
