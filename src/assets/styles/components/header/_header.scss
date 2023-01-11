@@ -55,6 +55,43 @@ header {
         border-radius: 50%;
       }
     }
+
+    .header-user {
+      position: relative;
+      .online {
+        // make animation of green color dot
+        position: absolute;
+        top: -2px;
+        left: 1px;
+        background-color: #00ff00;
+        color: #fff;
+        width: 10px;
+        height: 10px;
+        text-align: center;
+        font-size: 12px;
+        border-radius: 50%;
+        @keyframes online {
+          0% {
+            background-color: #00ff00;
+          }
+          25% {
+            background-color: #16a716;
+          }
+          50% {
+            background-color: #227d22;
+          }
+          75% {
+            background-color: #2e532e;
+          }
+          100% {
+            background-color: #3a283a;
+          }
+        }
+        & {
+          animation: online ease-in-out 1.5s infinite;
+        }
+      }
+    }
   }
 
   @media only screen and (min-width: 600px) {

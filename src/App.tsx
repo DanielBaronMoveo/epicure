@@ -10,15 +10,17 @@ import { getRestaurantsAndDishes } from "./store/restaurant/restaurant.action";
 import { getDishes } from "./store/dish/dish.action";
 import ScrollToTop from "./utils/scrollToTop";
 import Error from "./components/error/Error";
+import { authActions } from "./store/auth/auth.slice";
 
 const App = () => {
   const dispatch = useDispatch<AppDispatch>();
   const restaurants = useSelector(
     (state: RootStore) => state.restaurants.restaurants
   );
-  const error = useSelector((state: RootStore) => state.error);
-  console.log(error, "error");
 
+  const user = useSelector((state: RootStore) => state.auth.user);
+
+  const error = useSelector((state: RootStore) => state.error);
   const dishes = useSelector((state: RootStore) => state.dishes.dishes);
   useEffect(() => {
     if (!restaurants) {
@@ -26,6 +28,13 @@ const App = () => {
     }
     if (!dishes) {
       dispatch(getDishes());
+    }
+  }, []);
+  // check if there is user in local storage if so set it in redux
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      dispatch(authActions.setUser(JSON.parse(user)));
     }
   }, []);
   return (

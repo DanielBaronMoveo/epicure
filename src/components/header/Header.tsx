@@ -21,6 +21,7 @@ const Header = () => {
   const [isUser, setIsUser] = useState<boolean>(false);
   const isOrder = useSelector((state: RootStore) => state.cart.isOrder);
   const quantity = useSelector((state: RootStore) => state.cart.quantity);
+  const user = useSelector((state: RootStore) => state.auth.user);
   const location = useLocation();
   const [navLinks, setNavLinks] = useState<ILink[]>([
     { path: "restaurants", isActive: false, value: "Restaurants" },
@@ -102,12 +103,15 @@ const Header = () => {
               alt="search-bar"
               onClick={toggleSearch}
             />
-            <img
-              src={userIcon}
-              className="nav-icon"
-              alt="user"
-              onClick={toggleUser}
-            />
+            <div className="header-user flex">
+              <img
+                src={userIcon}
+                className="nav-icon"
+                alt="user"
+                onClick={toggleUser}
+              />
+              {user && <span className="online"></span>}
+            </div>
             <div className="header-cart flex">
               {quantity > 0 && (
                 <span className="cart-quantity">{quantity}</span>
